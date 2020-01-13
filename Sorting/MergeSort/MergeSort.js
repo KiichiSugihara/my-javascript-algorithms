@@ -1,4 +1,4 @@
-function MergeSort(items) {
+function mergeSort(items) {
   // 受け取ったdata(配列)が、最小単位になるまで分割し続ける。
   if (items.length < 2) {
     return items;
@@ -8,7 +8,7 @@ function MergeSort(items) {
     left = items.slice(0, middle),
     right = items.slice(middle);
 
-  return merge(MergeSort(left), MergeSort(right));
+  return merge(mergeSort(left), mergeSort(right));
 }
 function merge(left, right) {
   let result = [],
@@ -26,4 +26,4 @@ function merge(left, right) {
   // 配列で余った一番大きい値を最後にresultに入れて終了。
   return result.concat(left.slice(il)).concat(right.slice(ir));
 }
-module.exports = MergeSort;
+module.exports = mergeSort;
